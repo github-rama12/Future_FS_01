@@ -17,7 +17,7 @@ const HeroSection = () => {
           Hello, I'm
         </p>
         <h1 className="font-heading text-5xl md:text-7xl font-bold mb-6">
-          <span className="text-gradient">John Doe</span>
+          <span className="text-gradient">Ramachandra Rao</span>
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8">
           Full-Stack Developer crafting modern web experiences with clean code and creative design.
