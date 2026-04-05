@@ -16,6 +16,11 @@ const projects = [
     desc: "SaaS platform leveraging OpenAI for automated blog post and social media content creation.",
     tags: ["React", "Python", "OpenAI", "AWS"],
   },
+  {
+    title: "Face Recognition System",
+    desc: "AI-powered face recognition system for real-time identification and authentication using deep learning models.",
+    tags: ["Python", "OpenCV", "TensorFlow", "AI"],
+  },
 ];
 
 const ProjectsSection = () => {
