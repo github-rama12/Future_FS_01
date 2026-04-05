@@ -2,19 +2,9 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    desc: "Full-stack marketplace with real-time inventory, Stripe payments, and admin dashboard.",
-    tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
-  },
-  {
-    title: "Task Management App",
-    desc: "Collaborative project management tool with drag-and-drop boards and real-time updates.",
-    tags: ["TypeScript", "Next.js", "Prisma", "WebSocket"],
-  },
-  {
-    title: "AI Content Generator",
-    desc: "SaaS platform leveraging OpenAI for automated blog post and social media content creation.",
-    tags: ["React", "Python", "OpenAI", "AWS"],
+    title: "Face Recognition System",
+    desc: "AI-powered face recognition system for real-time identification and verification using deep learning models.",
+    tags: ["Python", "OpenCV", "TensorFlow", "AI"],
   },
 ];
 
@@ -28,7 +18,7 @@ const ProjectsSection = () => {
         <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">
           A selection of recent work I'm proud of.
         </p>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 max-w-md md:max-w-lg mx-auto">
           {projects.map((p) => (
             <div
               key={p.title}
