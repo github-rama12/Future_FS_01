@@ -33,7 +33,7 @@ const HeroSection = () => {
         <div className="flex items-center justify-center gap-5 text-muted-foreground">
           <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors"><Github size={22} /></a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors"><Linkedin size={22} /></a>
-          <a href="mailto:hello@example.com" className="hover:text-primary transition-colors"><Mail size={22} /></a>
+          <a href="mailto:ramapagoti3@gmail.com" className="hover:text-primary transition-colors"><Mail size={22} /></a>
         </div>
       </div>
       <a href="#about" className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground animate-float">
