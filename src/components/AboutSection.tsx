@@ -1,9 +1,9 @@
 import { Code2, Palette, Rocket } from "lucide-react";
 
 const highlights = [
-  { icon: Code2, title: "Clean Code", desc: "Writing maintainable, scalable solutions" },
-  { icon: Palette, title: "Creative Design", desc: "Pixel-perfect, user-centered interfaces" },
-  { icon: Rocket, title: "Performance", desc: "Optimized for speed and accessibility" },
+  { icon: Code2, title: "Problem Solver", desc: "Love tackling complex coding challenges and competitive programming" },
+  { icon: Palette, title: "Creative Builder", desc: "Building user-friendly interfaces with modern web technologies" },
+  { icon: Rocket, title: "Quick Learner", desc: "Always exploring new frameworks, tools, and technologies" },
 ];
 
 const AboutSection = () => {
@@ -14,8 +14,9 @@ const AboutSection = () => {
           About <span className="text-gradient">Me</span>
         </h2>
         <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">
-          I'm a passionate developer with 5+ years of experience building web applications.
-          I love turning complex problems into simple, beautiful solutions.
+          I'm a B.Tech Computer Science student with a strong passion for full-stack web development.
+          I enjoy learning new technologies, building real-world projects, and solving problems through code.
+          Currently focused on Java, React, and Spring Boot.
         </p>
         <div className="grid md:grid-cols-3 gap-6">
           {highlights.map((h) => (

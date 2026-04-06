@@ -3,32 +3,26 @@ import { ExternalLink, Github, X } from "lucide-react";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    desc: "Full-stack marketplace with real-time inventory, Stripe payments, and admin dashboard.",
-    tags: ["React", "Node.js", "PostgreSQL", "Stripe"],
-    details: "A comprehensive e-commerce solution featuring product catalog management, shopping cart with persistent sessions, real-time inventory tracking, Stripe payment integration with webhook handling, and a full admin dashboard for order management, analytics, and customer support. Built with React on the frontend and Node.js/Express backend with PostgreSQL database.",
-    features: ["Real-time inventory sync", "Stripe payment gateway", "Admin analytics dashboard", "Order tracking system", "Customer review system"],
-  },
-  {
-    title: "Task Management App",
-    desc: "Collaborative project management tool with drag-and-drop boards and real-time updates.",
-    tags: ["TypeScript", "Next.js", "Prisma", "WebSocket"],
-    details: "A Trello-inspired project management platform with real-time collaboration powered by WebSockets. Features include drag-and-drop task boards, team workspaces, file attachments, activity logging, and deadline notifications. Built with Next.js and Prisma ORM for type-safe database operations.",
-    features: ["Drag-and-drop Kanban boards", "Real-time collaboration", "Team workspaces", "File attachments", "Deadline notifications"],
-  },
-  {
-    title: "AI Content Generator",
-    desc: "SaaS platform leveraging OpenAI for automated blog post and social media content creation.",
-    tags: ["React", "Python", "OpenAI", "AWS"],
-    details: "An AI-powered SaaS platform that generates high-quality blog posts, social media captions, and marketing copy using OpenAI's GPT models. Includes a rich text editor, content scheduling, SEO optimization suggestions, and team collaboration features. Deployed on AWS with serverless architecture.",
-    features: ["GPT-powered content generation", "Rich text editor", "Content scheduling", "SEO optimization", "Team collaboration"],
+    title: "Employee Management System",
+    desc: "A web application to manage employee records with CRUD operations using Spring Boot and React.",
+    tags: ["Java", "Spring Boot", "React", "MySQL"],
+    details: "A full-stack Employee Management System built with Spring Boot backend and React frontend. Features include adding, editing, deleting, and viewing employee records. Uses MySQL for data persistence and RESTful APIs for communication between frontend and backend.",
+    features: ["CRUD operations for employees", "RESTful API integration", "Search & filter employees", "Responsive React UI", "MySQL database"],
   },
   {
     title: "Face Recognition System",
-    desc: "AI-powered face recognition system for real-time identification and authentication using deep learning models.",
+    desc: "AI-powered face recognition system for real-time identification using deep learning models.",
     tags: ["Python", "OpenCV", "TensorFlow", "AI"],
-    details: "An advanced face recognition system using deep learning models for real-time face detection, identification, and authentication. Utilizes OpenCV for image processing, TensorFlow for neural network inference, and supports multi-face tracking. Designed for security and access control applications.",
-    features: ["Real-time face detection", "Multi-face tracking", "Deep learning models", "Access control integration", "High accuracy authentication"],
+    details: "An advanced face recognition system using deep learning models for real-time face detection and identification. Utilizes OpenCV for image processing and TensorFlow for neural network inference. Designed for security and attendance tracking applications.",
+    features: ["Real-time face detection", "Multi-face tracking", "Deep learning models", "Attendance tracking", "High accuracy recognition"],
+  },
+  {
+    title: "Job Portal App",
+    desc: "An online job portal connecting job seekers with employers, featuring job listings and applications.",
+    tags: ["React", "Node.js", "MongoDB", "Express"],
+    details: "A full-stack job portal application where employers can post job openings and job seekers can search, filter, and apply for jobs. Includes user authentication, profile management, and application tracking. Built with MERN stack.",
+    features: ["Job search & filters", "User authentication", "Application tracking", "Employer dashboard", "Profile management"],
+    status: "In Progress",
   },
 ];
 
@@ -42,7 +36,7 @@ const ProjectsSection = () => {
           Featured <span className="text-gradient">Projects</span>
         </h2>
         <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">
-          A selection of recent work I'm proud of.
+          Projects I've built while learning and exploring new technologies.
         </p>
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((p, i) => (
@@ -50,8 +44,13 @@ const ProjectsSection = () => {
               key={p.title}
               className="group flex flex-col rounded-xl bg-card border border-border overflow-hidden hover:border-primary/50 transition-all hover:glow-shadow"
             >
-              <div className="h-48 bg-secondary/50 flex items-center justify-center">
+              <div className="h-48 bg-secondary/50 flex items-center justify-center relative">
                 <span className="font-heading text-lg text-muted-foreground">{p.title}</span>
+                {"status" in p && p.status && (
+                  <span className="absolute top-3 right-3 px-3 py-1 text-xs rounded-full bg-accent text-accent-foreground font-medium">
+                    {p.status}
+                  </span>
+                )}
               </div>
               <div className="p-6 flex flex-col flex-1">
                 <h3 className="font-heading text-lg font-semibold mb-2">{p.title}</h3>
@@ -79,7 +78,6 @@ const ProjectsSection = () => {
         </div>
       </div>
 
-      {/* Project Detail Modal */}
       {selected !== null && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm" onClick={() => setSelected(null)}>
           <div

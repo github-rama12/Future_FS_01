@@ -20,7 +20,7 @@ const HeroSection = () => {
           <span className="text-gradient">Ramachandra Rao</span>
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8">
-          Full-Stack Developer crafting modern web experiences with clean code and creative design.
+          Aspiring Full Stack Developer | B.Tech CSE Student passionate about building web applications and solving real-world problems.
         </p>
         <div className="flex items-center justify-center gap-4 mb-12">
           <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity">
