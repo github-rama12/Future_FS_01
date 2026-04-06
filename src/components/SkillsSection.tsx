@@ -1,13 +1,13 @@
 const skills = [
-  { name: "React", level: 95 },
-  { name: "TypeScript", level: 90 },
-  { name: "Node.js", level: 85 },
-  { name: "CSS / Tailwind", level: 92 },
+  { name: "Java", level: 85 },
   { name: "Python", level: 75 },
-  { name: "PostgreSQL", level: 80 },
+  { name: "C", level: 70 },
+  { name: "React", level: 70 },
+  { name: "HTML / CSS", level: 85 },
+  { name: "SQL", level: 75 },
 ];
 
-const techStack = ["React", "Next.js", "TypeScript", "Node.js", "Express", "PostgreSQL", "MongoDB", "Tailwind CSS", "Docker", "Git", "AWS", "Figma"];
+const techStack = ["Java", "Python", "C", "React", "Spring Boot", "HTML", "CSS", "JavaScript", "TypeScript", "Tailwind CSS", "SQL", "PostgreSQL", "MongoDB", "Git", "Docker", "VS Code"];
 
 const SkillsSection = () => {
   return (
@@ -17,7 +17,7 @@ const SkillsSection = () => {
           My <span className="text-gradient">Skills</span>
         </h2>
         <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">
-          Technologies and tools I work with daily.
+          Technologies and tools I'm learning and working with.
         </p>
         <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto mb-16">
           {skills.map((s) => (

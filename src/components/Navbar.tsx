@@ -16,7 +16,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container flex items-center justify-between h-16">
         <a href="#" className="font-heading text-xl font-bold text-gradient">
-          Portfolio
+          Ramachandra.dev
         </a>
         <div className="hidden md:flex gap-8">
           {navLinks.map((l) => (
