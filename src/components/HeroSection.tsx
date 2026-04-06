@@ -1,5 +1,6 @@
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import profilePhoto from "@/assets/profile-photo.png";
 
 const HeroSection = () => {
   return (
@@ -13,6 +14,17 @@ const HeroSection = () => {
       />
       <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
       <div className="relative z-10 container text-center animate-fade-up">
+        <div className="flex justify-center mb-8">
+          <div className="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden border-4 border-primary/30 shadow-xl">
+            <img
+              src={profilePhoto}
+              alt="Ramachandra Rao"
+              className="w-full h-full object-cover"
+              width={512}
+              height={512}
+            />
+          </div>
+        </div>
         <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">
           Hello, I'm
         </p>
@@ -22,14 +34,6 @@ const HeroSection = () => {
         <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8">
           Aspiring Full Stack Developer | B.Tech CSE Student passionate about building web applications and solving real-world problems.
         </p>
-        <div className="flex items-center justify-center gap-4 mb-12">
-          <a href="#contact" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity">
-            Get in Touch
-          </a>
-          <a href="#projects" className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-border text-foreground hover:bg-secondary transition-colors">
-            View Work
-          </a>
-        </div>
         <div className="flex items-center justify-center gap-5 text-muted-foreground">
           <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors"><Github size={22} /></a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors"><Linkedin size={22} /></a>

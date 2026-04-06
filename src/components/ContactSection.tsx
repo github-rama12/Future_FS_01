@@ -7,11 +7,17 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Portfolio Contact from ${form.name}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`
-    );
-    window.open(`mailto:ramapagoti3@gmail.com?subject=${subject}&body=${body}`, "_self");
+    
+    if (!form.name || !form.email || !form.message) {
+      toast.error("Please fill in all fields.");
+      return;
+    }
+
+    const subject = `Portfolio Contact from ${form.name}`;
+    const body = `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`;
+    const mailtoLink = `mailto:ramapagoti3@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    window.location.href = mailtoLink;
     toast.success("Opening your email client...");
     setForm({ name: "", email: "", message: "" });
   };
@@ -33,7 +39,9 @@ const ContactSection = () => {
               </div>
               <div>
                 <h4 className="font-medium mb-1">Email</h4>
-                <p className="text-sm text-muted-foreground">ramapagoti3@gmail.com</p>
+                <a href="mailto:ramapagoti3@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  ramapagoti3@gmail.com
+                </a>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -42,7 +50,9 @@ const ContactSection = () => {
               </div>
               <div>
                 <h4 className="font-medium mb-1">Phone</h4>
-                <p className="text-sm text-muted-foreground">+91 7337001495</p>
+                <a href="tel:+917337001495" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  +91 7337001495
+                </a>
               </div>
             </div>
             <div className="flex items-start gap-4">
