@@ -1,48 +1,85 @@
 import { useState } from "react";
 import { ExternalLink, Github, X } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const projects = [
   {
-    title: "Employee Management System",
-    desc: "A web application to manage employee records with CRUD operations using Spring Boot and React.",
-    tags: ["Java", "Spring Boot", "React", "MySQL"],
-    details: "A full-stack Employee Management System built with Spring Boot backend and React frontend. Features include adding, editing, deleting, and viewing employee records. Uses MySQL for data persistence and RESTful APIs for communication between frontend and backend.",
-    features: ["CRUD operations for employees", "RESTful API integration", "Search & filter employees", "Responsive React UI", "MySQL database"],
+    title: "AI-Based Smart Attendance System",
+    desc: "Real-time attendance system using OpenCV and LBPH algorithm with face detection and recognition.",
+    tags: ["Python", "OpenCV", "NumPy", "Pandas", "Tkinter"],
+    details: "Developed a real-time attendance system using OpenCV and LBPH algorithm. Implemented face detection and recognition using webcam input. Designed GUI using Tkinter for user interaction and live monitoring. Automated attendance storage in Excel with date and time.",
+    features: [
+      "Real-time face detection & recognition",
+      "LBPH algorithm for identification",
+      "Tkinter GUI for live monitoring",
+      "Automated Excel attendance storage",
+      "Image capture & visual confirmation",
+    ],
   },
   {
-    title: "Face Recognition System",
-    desc: "AI-powered face recognition system for real-time identification using deep learning models.",
-    tags: ["Python", "OpenCV", "TensorFlow", "AI"],
-    details: "An advanced face recognition system using deep learning models for real-time face detection and identification. Utilizes OpenCV for image processing and TensorFlow for neural network inference. Designed for security and attendance tracking applications.",
-    features: ["Real-time face detection", "Multi-face tracking", "Deep learning models", "Attendance tracking", "High accuracy recognition"],
+    title: "Simple Website Blocker Extension",
+    desc: "Chrome extension to block user-specified websites and improve productivity with real-time URL monitoring.",
+    tags: ["HTML", "CSS", "JavaScript", "Chrome Extensions API"],
+    details: "Built a browser extension to block user-specified websites and improve productivity. Implemented real-time URL monitoring and redirection using Chrome Extensions API. Stored blocked websites using Chrome storage for persistent data handling.",
+    features: [
+      "Block user-specified websites",
+      "Real-time URL monitoring & redirection",
+      "Chrome storage for persistent data",
+      "Simple popup interface",
+      "Productivity improvement tool",
+    ],
   },
   {
-    title: "Job Portal App",
-    desc: "An online job portal connecting job seekers with employers, featuring job listings and applications.",
-    tags: ["React", "Node.js", "MongoDB", "Express"],
-    details: "A full-stack job portal application where employers can post job openings and job seekers can search, filter, and apply for jobs. Includes user authentication, profile management, and application tracking. Built with MERN stack.",
-    features: ["Job search & filters", "User authentication", "Application tracking", "Employer dashboard", "Profile management"],
-    status: "In Progress",
+    title: "Local Business Website Design",
+    desc: "Fully responsive website for a local business to enhance digital presence and customer reach.",
+    tags: ["HTML", "CSS", "JavaScript", "Figma", "Canva"],
+    details: "Developed a fully responsive website for a local business to enhance digital presence and customer reach. Implemented modern UI/UX principles for better user experience. Conducted requirement analysis and delivered a tailored solution based on business needs.",
+    features: [
+      "Fully responsive design",
+      "Modern UI/UX principles",
+      "Client requirement analysis",
+      "Digital presence enhancement",
+      "Successfully pitched to business owner",
+    ],
+  },
+  {
+    title: "Community Health Data Analysis",
+    desc: "Community service project analyzing health and hygiene data with surveys and awareness programs.",
+    tags: ["Data Analysis", "Python", "Community Service"],
+    details: "Conducted community surveys to assess hygiene and sanitation practices. Collected and analyzed structured data related to health habits. Identified public health issues and proposed short-term and long-term solutions. Delivered awareness programs and documented findings.",
+    features: [
+      "Community survey design & execution",
+      "Structured data collection & analysis",
+      "Public health issue identification",
+      "Awareness program delivery",
+      "Team collaboration & documentation",
+    ],
+    status: "Completed",
   },
 ];
 
 const ProjectsSection = () => {
   const [selected, setSelected] = useState<number | null>(null);
+  const header = useScrollAnimation();
+  const grid = useScrollAnimation(0.05);
 
   return (
     <section id="projects" className="py-24">
       <div className="container">
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-4">
-          Featured <span className="text-gradient">Projects</span>
-        </h2>
-        <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">
-          Projects I've built while learning and exploring new technologies.
-        </p>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div ref={header.ref} className={`${header.isVisible ? "scroll-visible" : "scroll-hidden"}`}>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-4">
+            Featured <span className="text-gradient">Projects</span>
+          </h2>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">
+            Projects I've built while learning and exploring new technologies.
+          </p>
+        </div>
+        <div ref={grid.ref} className={`grid md:grid-cols-2 gap-6 ${grid.isVisible ? "scroll-visible" : "scroll-hidden"}`}>
           {projects.map((p, i) => (
             <div
               key={p.title}
               className="group flex flex-col rounded-xl bg-card border border-border overflow-hidden hover:border-primary/50 transition-all hover:glow-shadow"
+              style={{ transitionDelay: grid.isVisible ? `${i * 150}ms` : "0ms" }}
             >
               <div className="h-48 bg-secondary/50 flex items-center justify-center relative">
                 <span className="font-heading text-lg text-muted-foreground">{p.title}</span>
@@ -60,11 +97,7 @@ const ProjectsSection = () => {
                     <span key={t} className="px-2 py-1 text-xs rounded bg-primary/10 text-primary">{t}</span>
                   ))}
                 </div>
-                <div className="flex items-center justify-between">
-                  <div className="flex gap-3 text-muted-foreground">
-                    <a href="#" className="hover:text-primary transition-colors"><Github size={18} /></a>
-                    <a href="#" className="hover:text-primary transition-colors"><ExternalLink size={18} /></a>
-                  </div>
+                <div className="flex items-center justify-end">
                   <button
                     onClick={() => setSelected(i)}
                     className="text-sm text-primary hover:underline font-medium"
@@ -106,14 +139,6 @@ const ProjectsSection = () => {
                   </li>
                 ))}
               </ul>
-            </div>
-            <div className="flex gap-4 mt-8">
-              <a href="#" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition-opacity">
-                <Github size={16} /> View Code
-              </a>
-              <a href="#" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-foreground font-medium text-sm hover:bg-secondary transition-colors">
-                <ExternalLink size={16} /> Live Demo
-              </a>
             </div>
           </div>
         </div>
