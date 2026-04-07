@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Send, MapPin, Mail, Phone } from "lucide-react";
 import { toast } from "sonner";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const header = useScrollAnimation();
+  const content = useScrollAnimation(0.1);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,13 +28,15 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-24 bg-card/50">
       <div className="container">
-        <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-4">
-          Get in <span className="text-gradient">Touch</span>
-        </h2>
-        <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">
-          Have a project in mind? Let's work together.
-        </p>
-        <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div ref={header.ref} className={`${header.isVisible ? "scroll-visible" : "scroll-hidden"}`}>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-center mb-4">
+            Get in <span className="text-gradient">Touch</span>
+          </h2>
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-16">
+            Have a project in mind? Let's work together.
+          </p>
+        </div>
+        <div ref={content.ref} className={`grid md:grid-cols-2 gap-12 max-w-4xl mx-auto ${content.isVisible ? "scroll-visible" : "scroll-hidden"}`}>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
@@ -61,7 +66,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <h4 className="font-medium mb-1">Location</h4>
-                <p className="text-sm text-muted-foreground">Andhra Pradesh, India</p>
+                <p className="text-sm text-muted-foreground">Srikakulam, Andhra Pradesh, India</p>
               </div>
             </div>
           </div>
