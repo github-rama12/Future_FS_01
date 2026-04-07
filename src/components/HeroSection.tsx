@@ -35,8 +35,8 @@ const HeroSection = () => {
           Aspiring Full Stack Developer | B.Tech CSE Student passionate about building web applications and solving real-world problems.
         </p>
         <div className="flex items-center justify-center gap-5 text-muted-foreground">
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors"><Github size={22} /></a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors"><Linkedin size={22} /></a>
+          <a href="https://github.com/github-rama12/FUTURE_FS_01" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors"><Github size={22} /></a>
+          <a href="https://www.linkedin.com/in/pagoti-ramachandra-2b27812a3/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors"><Linkedin size={22} /></a>
           <a href="mailto:ramapagoti3@gmail.com" className="hover:text-primary transition-colors"><Mail size={22} /></a>
         </div>
       </div>
