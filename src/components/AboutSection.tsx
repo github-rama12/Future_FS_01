@@ -1,6 +1,6 @@
 import { Code2, Palette, Rocket } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import aboutImg from "@/assets/about-img.jpg";
+import aboutPhoto from "@/assets/about-photo.jpg";
 
 const highlights = [
   { icon: Code2, title: "Problem Solver", desc: "Love tackling complex coding challenges and competitive programming" },
