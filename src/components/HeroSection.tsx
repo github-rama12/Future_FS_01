@@ -1,6 +1,14 @@
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import profilePhoto from "@/assets/profile-photo.jpg";
+import { useTypingAnimation } from "@/hooks/useTypingAnimation";
+
+const roles = [
+  "Aspiring Full Stack Developer",
+  "B.Tech CSE Student",
+  "Problem Solver",
+  "Python & Java Developer",
+];
 
 const HeroSection = () => {
   return (
