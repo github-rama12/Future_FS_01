@@ -41,8 +41,9 @@ const HeroSection = () => {
         <h1 className="font-heading text-5xl md:text-7xl font-bold mb-6">
           <span className="text-gradient">Ramachandra Rao</span>
         </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8">
-          Aspiring Full Stack Developer | B.Tech CSE Student passionate about building web applications and solving real-world problems.
+        <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-8 h-8">
+          <span>{typedText}</span>
+          <span className="inline-block w-0.5 h-6 bg-primary ml-1 animate-pulse" />
         </p>
         <div className="flex items-center justify-center gap-5 text-muted-foreground">
           <a href="https://github.com/github-rama12/FUTURE_FS_01" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors"><Github size={22} /></a>
