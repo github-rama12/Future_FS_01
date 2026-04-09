@@ -11,6 +11,9 @@ const roles = [
 ];
 
 const HeroSection = () => {
+  const typedText = useTypingAnimation(roles);
+
+  return (
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <img
