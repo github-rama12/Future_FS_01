@@ -29,7 +29,7 @@ const AboutSection = () => {
         <div ref={imageAnim.ref} className={`grid md:grid-cols-2 gap-12 items-center mb-16 ${imageAnim.isVisible ? "scroll-visible" : "scroll-hidden"}`}>
           <div className="rounded-xl overflow-hidden border border-border glow-shadow">
             <img
-              src={aboutImg}
+              src={aboutPhoto}
               alt="Ramachandra Rao working"
               className="w-full h-auto object-cover"
               loading="lazy"
