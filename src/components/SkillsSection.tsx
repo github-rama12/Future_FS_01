@@ -6,12 +6,26 @@ const skills = [
   { name: "C", level: 70 },
   { name: "DSA (Python)", level: 75 },
   { name: "HTML / CSS", level: 85 },
+  { name: "JavaScript", level: 70 },
   { name: "SQL", level: 70 },
+  { name: "Machine Learning", level: 65 },
 ];
 
-const techStack = ["Python", "Java", "C", "DSA", "HTML", "CSS", "JavaScript", "NumPy", "Pandas", "MS Excel", "Jupyter Notebook", "Git", "Tkinter", "OpenCV", "VS Code"];
+const techStack = [
+  "Python", "Java", "C", "JavaScript", "HTML", "CSS", "SQL",
+  "NumPy", "Pandas", "OpenCV", "Tkinter", "Scikit-learn",
+  "Git", "GitHub", "VS Code", "Jupyter Notebook",
+  "MS Excel", "Figma", "Canva", "Chrome Extensions API",
+];
 
-const softSkills = ["Teamwork & Collaboration", "Planning & Organizing", "Analytical Thinking", "Problem Solving"];
+const softSkills = [
+  "Teamwork & Collaboration",
+  "Planning & Organizing",
+  "Analytical Thinking",
+  "Problem Solving",
+  "Communication",
+  "Time Management",
+];
 
 const SkillsSection = () => {
   const header = useScrollAnimation();
@@ -29,16 +43,16 @@ const SkillsSection = () => {
             Technologies and tools I'm learning and working with.
           </p>
         </div>
-        <div ref={bars.ref} className={`grid md:grid-cols-2 gap-12 max-w-4xl mx-auto mb-16 ${bars.isVisible ? "scroll-visible" : "scroll-hidden"}`}>
+        <div ref={bars.ref} className={`grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16 ${bars.isVisible ? "scroll-visible" : "scroll-hidden"}`}>
           {skills.map((s, i) => (
-            <div key={s.name} style={{ transitionDelay: bars.isVisible ? `${i * 100}ms` : "0ms" }}>
+            <div key={s.name} style={{ transitionDelay: bars.isVisible ? `${i * 80}ms` : "0ms" }}>
               <div className="flex justify-between mb-2">
                 <span className="text-sm font-medium">{s.name}</span>
                 <span className="text-sm text-muted-foreground">{s.level}%</span>
               </div>
-              <div className="h-2 rounded-full bg-secondary">
+              <div className="h-2.5 rounded-full bg-secondary">
                 <div
-                  className="h-full rounded-full bg-primary transition-all duration-1000"
+                  className="h-full rounded-full bg-gradient-to-r from-primary to-accent transition-all duration-1000"
                   style={{ width: bars.isVisible ? `${s.level}%` : "0%" }}
                 />
               </div>
