@@ -12,10 +12,26 @@ const skills = [
 ];
 
 const techStack = [
-  "Python", "Java", "C", "JavaScript", "HTML", "CSS", "SQL",
-  "NumPy", "Pandas", "OpenCV", "Tkinter", "Scikit-learn",
-  "Git", "GitHub", "VS Code", "Jupyter Notebook",
-  "MS Excel", "Figma", "Canva", "Chrome Extensions API",
+  { name: "Python", icon: "devicon-python-plain" },
+  { name: "Java", icon: "devicon-java-plain" },
+  { name: "C", icon: "devicon-c-plain" },
+  { name: "JavaScript", icon: "devicon-javascript-plain" },
+  { name: "HTML", icon: "devicon-html5-plain" },
+  { name: "CSS", icon: "devicon-css3-plain" },
+  { name: "SQL", icon: "devicon-mysql-plain" },
+  { name: "NumPy", icon: "devicon-numpy-plain" },
+  { name: "Pandas", icon: "devicon-pandas-plain" },
+  { name: "OpenCV", icon: "devicon-opencv-plain" },
+  { name: "Tkinter", icon: "devicon-python-plain" },
+  { name: "Scikit-learn", icon: "devicon-scikitlearn-plain" },
+  { name: "Git", icon: "devicon-git-plain" },
+  { name: "GitHub", icon: "devicon-github-original" },
+  { name: "VS Code", icon: "devicon-vscode-plain" },
+  { name: "Jupyter", icon: "devicon-jupyter-plain" },
+  { name: "MS Excel", icon: "devicon-windows11-original" },
+  { name: "Figma", icon: "devicon-figma-plain" },
+  { name: "Canva", icon: "devicon-canva-original" },
+  { name: "Chrome Extensions", icon: "devicon-chrome-plain" },
 ];
 
 const softSkills = [
@@ -63,8 +79,9 @@ const SkillsSection = () => {
           <h3 className="font-heading text-lg font-semibold text-center mb-4">Tech Stack</h3>
           <div className="flex flex-wrap justify-center gap-3 mb-8">
             {techStack.map((t) => (
-              <span key={t} className="px-4 py-2 rounded-full text-sm border border-border bg-secondary/50 text-foreground hover:border-primary/50 transition-colors">
-                {t}
+              <span key={t.name} className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm border border-border bg-secondary/50 text-foreground hover:border-primary/50 transition-colors">
+                <i className={`${t.icon} text-base`} />
+                {t.name}
               </span>
             ))}
           </div>

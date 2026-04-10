@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Eye, FileText } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import profilePhoto from "@/assets/profile-photo.jpg";
 import { useTypingAnimation } from "@/hooks/useTypingAnimation";
@@ -45,8 +45,16 @@ const HeroSection = () => {
           <span>{typedText}</span>
           <span className="inline-block w-0.5 h-6 bg-primary ml-1 animate-pulse" />
         </p>
+        <div className="flex items-center justify-center gap-4 mb-8">
+          <a href="#projects" className="btn-premium inline-flex items-center gap-2 text-sm">
+            <Eye size={16} /> View My Work
+          </a>
+          <a href="#resume" className="btn-premium-outline inline-flex items-center gap-2 text-sm">
+            <FileText size={16} /> My Resume
+          </a>
+        </div>
         <div className="flex items-center justify-center gap-5 text-muted-foreground">
-          <a href="https://github.com/github-rama12/FUTURE_FS_01" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors"><Github size={22} /></a>
+          <a href="https://github.com/github-rama12" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors"><Github size={22} /></a>
           <a href="https://www.linkedin.com/in/pagoti-ramachandra-2b27812a3/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors"><Linkedin size={22} /></a>
           <a href="mailto:ramapagoti3@gmail.com" className="hover:text-primary transition-colors"><Mail size={22} /></a>
         </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExternalLink, Github, X } from "lucide-react";
+import { X } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const projects = [
@@ -15,6 +15,7 @@ const projects = [
       "Automated Excel attendance storage",
       "Image capture & visual confirmation",
     ],
+    status: "Completed",
   },
   {
     title: "Simple Website Blocker Extension",
@@ -28,6 +29,7 @@ const projects = [
       "Simple popup interface",
       "Productivity improvement tool",
     ],
+    status: "Completed",
   },
   {
     title: "Local Business Website Design",
@@ -41,6 +43,7 @@ const projects = [
       "Digital presence enhancement",
       "Successfully pitched to business owner",
     ],
+    status: "Completed",
   },
   {
     title: "Community Health Data Analysis",
@@ -83,11 +86,9 @@ const ProjectsSection = () => {
             >
               <div className="h-48 bg-secondary/50 flex items-center justify-center relative">
                 <span className="font-heading text-lg text-muted-foreground">{p.title}</span>
-                {"status" in p && p.status && (
-                  <span className="absolute top-3 right-3 px-3 py-1 text-xs rounded-full bg-accent text-accent-foreground font-medium">
-                    {p.status}
-                  </span>
-                )}
+                <span className="absolute top-3 right-3 px-3 py-1 text-xs rounded-full bg-accent text-accent-foreground font-medium">
+                  {p.status}
+                </span>
               </div>
               <div className="p-6 flex flex-col flex-1">
                 <h3 className="font-heading text-lg font-semibold mb-2">{p.title}</h3>
@@ -100,7 +101,7 @@ const ProjectsSection = () => {
                 <div className="flex items-center justify-end">
                   <button
                     onClick={() => setSelected(i)}
-                    className="text-sm text-primary hover:underline font-medium"
+                    className="btn-premium text-sm !py-2 !px-5"
                   >
                     View Details →
                   </button>
