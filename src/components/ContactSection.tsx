@@ -10,16 +10,13 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
     if (!form.name || !form.email || !form.message) {
       toast.error("Please fill in all fields.");
       return;
     }
-
     const subject = `Portfolio Contact from ${form.name}`;
     const body = `Name: ${form.name}\nEmail: ${form.email}\n\nMessage:\n${form.message}`;
     const mailtoLink = `mailto:ramapagoti3@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    
     window.location.href = mailtoLink;
     toast.success("Opening your email client...");
     setForm({ name: "", email: "", message: "" });
@@ -44,9 +41,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <h4 className="font-medium mb-1">Email</h4>
-                <a href="mailto:ramapagoti3@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  ramapagoti3@gmail.com
-                </a>
+                <a href="mailto:ramapagoti3@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition-colors">ramapagoti3@gmail.com</a>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -55,9 +50,7 @@ const ContactSection = () => {
               </div>
               <div>
                 <h4 className="font-medium mb-1">Phone</h4>
-                <a href="tel:+917337001495" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                  +91 7337001495
-                </a>
+                <a href="tel:+917337001495" className="text-sm text-muted-foreground hover:text-primary transition-colors">+91 7337001495</a>
               </div>
             </div>
             <div className="flex items-start gap-4">
@@ -71,34 +64,10 @@ const ContactSection = () => {
             </div>
           </div>
           <form onSubmit={handleSubmit} className="space-y-4">
-            <input
-              type="text"
-              placeholder="Your Name"
-              required
-              value={form.name}
-              onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition"
-            />
-            <input
-              type="email"
-              placeholder="Your Email"
-              required
-              value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition"
-            />
-            <textarea
-              placeholder="Your Message"
-              rows={5}
-              required
-              value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition resize-none"
-            />
-            <button
-              type="submit"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition-opacity"
-            >
+            <input type="text" placeholder="Your Name" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition" />
+            <input type="email" placeholder="Your Email" required value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition" />
+            <textarea placeholder="Your Message" rows={5} required value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition resize-none" />
+            <button type="submit" className="btn-premium inline-flex items-center gap-2 text-sm">
               Send Message <Send size={16} />
             </button>
           </form>

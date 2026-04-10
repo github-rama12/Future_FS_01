@@ -1,4 +1,4 @@
-import { Code2, Palette, Rocket } from "lucide-react";
+import { Code2, Palette, Rocket, ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import aboutPhoto from "@/assets/about-photo.jpg";
 
@@ -59,6 +59,9 @@ const AboutSection = () => {
                 <p className="text-xs text-muted-foreground">Projects Built</p>
               </div>
             </div>
+            <a href="#skills" className="btn-premium-outline inline-flex items-center gap-2 text-sm mt-4">
+              Learn More <ArrowRight size={16} />
+            </a>
           </div>
         </div>
 
